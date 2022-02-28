@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password_Generator</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        user-select: none;
+      }
+      .cneter {
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+      }
+      .btn {
+        display: flex;
+        /* width: fit-content; */
+        justify-content: center;
+      }
+      button {
+        font-size: 3vh;
+        height: fit-content;
+        background-color: rgba(0, 255, 21, 0.549);
+        color: rgb(0, 0, 0);
+        margin: 10px;
+        padding: 3px;
+        box-shadow: 5px 5px rgba(65, 105, 225, 0.515);
+      }
+      button:active,
+      button:hover {
+        background-color: rgb(4, 97, 12);
+        color: rgb(30, 255, 0);
+      }
+
+      .br {
+        background-color: rgb(138, 235, 141);
+        height: fit-content;
+        /* margin:2px; */
+        border: 1vmin groove black;
+        border-radius: 2vmin;
+        padding: 3%;
+        width: min-content;
+      }
+      .fn {
+        padding: 3%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        width: 50vw;
+        height: 5vh;
+        font-size: 2.5vh;
+        border: 0.5vmin solid grey;
+        font-weight: bolder;
+      }
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+      }
+      #dis {
+        visibility: hidden;
+        width: fit-content;
+        height: fit-content;
+        border: 5px solid rgb(0, 143, 143);
+        margin-top: 25px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding: 5px;
+        text-align: center;
+        font-size: 5vmax;
+        background-color: aquamarine;
+      }
+      #dis:hover {
+        box-shadow: 5px 5px 5px 5px rgb(18, 126, 45);
+      }
+      .body {
+        width: 100vw;
+        height: 97vh;
+        background-image: linear-gradient(
+          rgba(113, 253, 235, 0.624),
+          rgba(13, 0, 255, 0.357)
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      body {
+        overflow: hidden;
+      }
+
+      .nul {
+        display: flex;
+        justify-content: center;
+      }
+      .a {
+        background-color: black;
+        font-size: large;
+        padding: 10px 0 10px 30px;
+      }
+      a {
+        color: aliceblue;
+        text-decoration: none;
+      }
+      .copyright {
+        text-align: center;
+        background: #000;
+        color: white;
+        margin-bottom: 0;
+        padding: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body">
+      <nav class="a"><a href="index.html"> Home </a></nav>
+
+      <div class="fn">
+        <div class="br">
+          <div class="cneter"><h1>RANDOM PASSWORD GENERATOR</h1></div>
+          <div>
+            <div class="cneter">
+              <input type="text" name="password" id="password" readonly />
+            </div>
+            <div class="btn">
+              <button type="button" onclick="pg()">Generate Password</button>
+            </div>
+            <div class="btn">
+              <button type="button" onclick="copy()">Copy password</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nul">
+        <div id="dis"></div>
+      </div>
+    </div>
+
+    <nav class="copyright">Copyright © 2022 Harsh. All rigths reserved.</nav>
+  </body>
+  <script src="index.js"></script>
+</html>
