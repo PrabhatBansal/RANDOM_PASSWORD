@@ -16,7 +16,7 @@ function showpass() {
     <input style="color:red;
     outline:none;
     border:none;
-    width:15vw" 
+    width:100px" 
     value="${element.pass}" 
     id="${index}" 
     readonly>
