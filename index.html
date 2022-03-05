@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password_Generator</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+
+      footer {
+        position: sticky;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        /* z-index: 1; */
+        /* user-select: none; */
+      }
+      .cneter {
+        display: flex;
+        justify-content: center;
+        padding: 1%;
+      }
+      .btn {
+        display: flex;
+        /* width: fit-content; */
+        justify-content: center;
+      }
+      button {
+        font-size: 3vh;
+        height: fit-content;
+        background-color: rgba(0, 255, 21, 0.549);
+        color: rgb(0, 0, 0);
+        margin: 10px;
+        padding: 3px;
+        box-shadow: 5px 5px rgba(65, 105, 225, 0.515);
+        font-family: "Syne Mono", monospace;
+      }
+      button:active,
+      button:hover {
+        background-color: rgb(4, 97, 12);
+        color: rgb(30, 255, 0);
+      }
+
+      .br {
+        background: linear-gradient(rgb(82, 252, 88), rgb(182, 255, 184));
+        height: fit-content;
+        /* margin:2px; */
+        border: 1vmin groove black;
+        border-radius: 2vmin;
+        padding: 3%;
+        width: min-content;
+      }
+      .fn {
+        padding: 3%;
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        width: 50vw;
+        height: 5vh;
+        font-size: 2.5vh;
+        border: 0.5vmin solid grey;
+        font-weight: bolder;
+        font-family: "Syne Mono", monospace;
+      }
+      form input {
+        width: 47vw;
+        margin: 0 10px 10px 10px;
+        padding-left: 5px;
+        font-family: "Syne Mono", monospace;
+      }
+
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+        font-family: "Syne Mono", monospace;
+      }
+      form h1 {
+        text-decoration: none;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-family: "Syne Mono", monospace;
+      }
+      #dis {
+        visibility: hidden;
+        width: fit-content;
+        height: fit-content;
+        border: 5px solid rgb(0, 143, 143);
+        margin-top: 25px;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        padding: 5px;
+        text-align: center;
+        font-size: 5vmax;
+        font-family: "Syne Mono", monospace;
+        background-color: aquamarine;
+        border-radius: 50px;
+      }
+      #dis:hover {
+        box-shadow: 5px 5px 5px 5px rgb(99, 199, 124);
+      }
+      .body {
+        width: 100vw;
+        height: 97vh;
+        background-image: linear-gradient(
+          rgba(113, 253, 235, 0.624),
+          rgba(13, 0, 255, 0.357)
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      body {
+        overflow: hidden;
+        background-image: none;
+      }
+
+      .nul {
+        display: flex;
+        justify-content: center;
+      }
+      .a {
+        background-color: black;
+        font-size: large;
+        padding: 10px 0 10px 30px;
+        font-family: "Syne Mono", monospace;
+        position: sticky;
+        top: 0;
+        z-index: 9;
+        height: 30px;
+      }
+
+      .copyright {
+        text-align: center;
+        background: #000;
+        color: white;
+        margin: 0;
+        margin-top: -5.5vh;
+        padding: 3px;
+        bottom: 0;
+      }
+      .btn2 {
+        display: inline;
+      }
+      .har {
+        display: flex;
+        justify-content: center;
+      }
+      form {
+        display: none;
+        z-index: 9;
+        width: 50vw;
+        height: max-content;
+        background-image: linear-gradient(
+          rgb(160, 160, 255),
+          rgb(255, 128, 195)
+        );
+        border: 2px solid #000;
+        border-radius: 20px;
+        padding: 10px;
+        position: sticky;
+        margin-top: -85vh;
+        transition: width 5s, heigth 1s, linear 1s;
+        /* margin-left: 23vw; */
+      }
+      form:hover {
+        width: calc(50vw + 50px);
+      }
+      form input::grammar-error {
+        text-decoration: none;
+      }
+      nav a {
+        margin: 20px;
+        color: aliceblue;
+        text-decoration: none;
+        font-family: "Syne Mono", monospace;
+      }
+
+      #spass {
+        margin-bottom: auto;
+      }
+      form div {
+        display: flex;
+        justify-content: center;
+      }
+      form label {
+        text-align: left;
+        font-family: "Syne Mono", monospace;
+        font-size: large;
+      }
+      .bdy {
+        height: 90vh;
+      }
+      .fr {
+        display: flex;
+        justify-content: center;
+      }
+      #boody {
+        filter: blur(8px);
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body" id="bood">
+      <nav class="a">
+        <a href="#"> Home </a> <a href="save.html">Saved Passwords</a>
+      </nav>
+      <div class="bdy">
+        <div class="fn">
+          <div class="br">
+            <div class="cneter"><h1>RANDOM PASSWORD GENERATOR</h1></div>
+            <div>
+              <div class="cneter">
+                <input type="text" name="password" id="password" readonly />
+              </div>
+              <div class="btn">
+                <button type="button" onclick="pg()">Generate Password</button>
+              </div>
+              <div class="har">
+                <div class="btn btn2">
+                  <button type="button" onclick="copy()">Copy</button>
+                </div>
+                <div class="btn btn2">
+                  <button type="button" onclick="save()">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nul">
+          <div id="dis"></div>
+        </div>
+      </div>
+      <div class="footer">
+        <footer class="copyright">
+          Copyright © 2022 Harsh. All rigths reserved.
+        </footer>
+      </div>
+    </div>
+    <div class="fr">
+      <form id="form">
+        <h1>Save your Password</h1>
+        <label for="stext">Title</label>
+        <div>
+          <input type="text" id="stext" placeholder="Title" required />
+        </div>
+        <label for="spass">Password </label>
+        <div>
+          <input
+            type="text"
+            id="spass"
+            required
+            minlength="9"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <button id="fnc" onclick="cancel()" type="submit">Cancel</button>
+          <button id="fns" type="submit">save</button>
+        </div>
+      </form>
+    </div>
+  </body>
+  <script src="index.js"></script>
+</html>
