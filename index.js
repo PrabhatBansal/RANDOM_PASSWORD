@@ -14,7 +14,7 @@ function pg() {
   }
   disPass.style.visibility = "visible";
   ult = `Your Password is:<br> <b>${Password}</b>`;
-  disPass.innerHtml = ult;
+  disPass.innerHTML = ult;
 }
 function copy() {
   Password2.select();
