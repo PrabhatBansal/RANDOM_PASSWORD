@@ -59,7 +59,7 @@ function copy(e) {
 
 let search = document.getElementById("searchTxt");
 search.addEventListener("input", function () {
-  let inputVal = search.value.toLowerCase();
+  let inputVal = search.value;
   // console.log('Input event fired!', inputVal);
   let noteCards = document.getElementsByClassName("noteCard");
   Array.from(noteCards).forEach(function (element) {
