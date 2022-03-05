@@ -13,7 +13,7 @@ function pg() {
     Password2.value = Password;
   }
   disPass.style.visibility = "visible";
-  ult = `Your Password is : ${Password}`;
+  ult = `Your Password is:<br> <b>${Password}</b>`;
   disPass.innerText = ult;
 }
 function copy() {
