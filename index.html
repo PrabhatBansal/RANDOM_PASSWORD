@@ -68,11 +68,11 @@
       }
       form input {
         width: 60vw;
-        heigth: 35px;
+        height: 35px;
         margin: 0 10px 10px 10px;
         padding-left: 5px;
-        font-family: "Syne Mono", monospace;
-        font-size:1em;
+        
+        font-size: large;
         
       }
 
@@ -86,6 +86,9 @@
         padding: 10px;
         margin-bottom: 10px;
         font-family: "Syne Mono", monospace;
+      }
+      form button{
+        font-size: large;
       }
       #dis {
         visibility: hidden;
@@ -165,11 +168,11 @@
         padding: 10px;
         position: absolute;
         top:25%;
-        transition: width 1s, heigth 1s, linear 1s;
+        transition: width 1s linear ;
         /* margin-left: 23vw; */
       }
       form:hover {
-        width: calc(50vw + 50px);
+        width: calc(70vw + 5px);
       }
       form input::grammar-error {
         text-decoration: none;
@@ -191,7 +194,8 @@
       form label {
         text-align: left;
         font-family: "Syne Mono", monospace;
-        font-size: large;
+        font-size: larger;
+        font-weight: bold;
       }
       .bdy {
         height: 90vh;
